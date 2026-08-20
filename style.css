@@ -177,6 +177,7 @@ button, input, select, textarea {
   letter-spacing: 0.04em;
   background: linear-gradient(135deg, #ffffff 10%, #fbbf24 60%, #f59e0b 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
 }
@@ -417,6 +418,7 @@ button, input, select, textarea {
 .text-gradient {
   background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #f97316 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -925,12 +927,43 @@ button, input, select, textarea {
 /* ==========================================================================
    TECHNICAL GRADE GUIDE & COMPARATOR TABLE
    ========================================================================== */
+.table-scroll-hint {
+  display: none;
+  font-size: 0.78rem;
+  color: var(--primary-600);
+  font-weight: 600;
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .table-scroll-hint {
+    display: block;
+  }
+}
+
 .table-responsive {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   border: 1px solid #e2e8f0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-400) #f1f5f9;
+}
+
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: var(--primary-400);
+  border-radius: 4px;
 }
 
 .comparison-table {
@@ -1443,134 +1476,130 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   DESKTOP FLOATING ACTION WIDGET
+   CORNER FLOATING ACTION WIDGET (Bottom-Right on Mobile & Desktop)
    ========================================================================== */
-.desktop-floating-actions {
+.corner-floating-widget {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 990;
-  display: flex;
-  flex-direction: row;
-  gap: 0.75rem;
-  align-items: center;
-}
-
-.floating-action-pill {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.7rem 1.2rem;
-  border-radius: var(--radius-pill);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.92rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  transition: all var(--transition-fast);
-  text-decoration: none;
-}
-
-.floating-action-pill:hover {
-  transform: translateY(-3px) scale(1.03);
-}
-
-.pill-whatsapp {
-  background: #25d366;
-  color: #ffffff;
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
-}
-
-.pill-whatsapp:hover {
-  background: #20ba59;
-  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
-  color: #ffffff;
-}
-
-.pill-call {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: #111827;
-  border: 1.5px solid #fbbf24;
-  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.45);
-}
-
-.pill-call:hover {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  box-shadow: 0 10px 30px rgba(217, 119, 6, 0.6);
-  color: #000000;
-}
-
-.btn-whatsapp-nav {
-  padding: 0.45rem 0.85rem;
-  font-size: 0.84rem;
-}
-
-/* ==========================================================================
-   MOBILE STICKY ACTION BAR & BOTTOM DOCK
-   ========================================================================== */
-.mobile-action-bar {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  background: rgba(11, 15, 23, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid var(--border-dark);
-  padding: 0.6rem 0.85rem;
-  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.45);
-}
-
-.mobile-action-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1.15fr 0.8fr;
-  gap: 0.5rem;
-}
-
-.mobile-btn {
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2rem;
-  padding: 0.48rem 0.25rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-decoration: none;
-  line-height: 1.15;
-  text-align: center;
+  align-items: flex-end;
+  gap: 12px;
+  pointer-events: none;
 }
 
-.mobile-btn svg {
-  width: 17px;
-  height: 17px;
+.corner-fab {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 10px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all var(--transition-fast);
+  position: relative;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.corner-fab:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.fab-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   flex-shrink: 0;
 }
 
-.mobile-btn-call {
+.fab-content {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.fab-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.92;
+}
+
+.fab-text {
+  font-size: 0.94rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+
+.fab-call {
   background: linear-gradient(135deg, #f59e0b, #d97706);
   color: #111827;
-  border: 1px solid #fbbf24;
+  border: 1.5px solid #fde68a;
 }
 
-.mobile-btn-whatsapp {
-  background: #25d366;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.fab-call .fab-icon-wrap {
+  background: rgba(0, 0, 0, 0.12);
+  color: #111827;
 }
 
-.mobile-btn-map {
-  background: var(--surface-elevated);
+.fab-call:hover {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #000000;
+}
+
+.fab-whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.fab-whatsapp .fab-icon-wrap {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.fab-whatsapp:hover {
+  background: linear-gradient(135deg, #2ae06e, #0f7a6e);
+  color: #ffffff;
+}
+
+.fab-pulse-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0;
+  animation: fab-pulse 2.4s infinite cubic-bezier(0.24, 0, 0.38, 1);
+  pointer-events: none;
+}
+
+.fab-whatsapp .fab-pulse-ring {
+  animation-delay: 0.8s;
+}
+
+@keyframes fab-pulse {
+  0% { transform: scale(0.92); opacity: 0.85; }
+  65% { transform: scale(1.45); opacity: 0; }
+  100% { transform: scale(1.45); opacity: 0; }
 }
 
 /* ==========================================================================
    RESPONSIVE BREAKPOINTS (Mobile-First / Scaled)
    ========================================================================== */
+
+/* Large Tablets & Small Laptops (max-width: 1024px) */
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1579,6 +1608,7 @@ button, input, select, textarea {
   .hero-showcase {
     max-width: 560px;
     margin: 0 auto;
+    width: 100%;
   }
   .calculator-card {
     grid-template-columns: 1fr;
@@ -1586,172 +1616,262 @@ button, input, select, textarea {
   }
   .wholesale-grid {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
   }
   .contact-cta-bar {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (max-width: 768px) {
-  .top-bar {
-    display: none;
-  }
-  .site-header {
-    padding: 0.25rem 0;
-  }
-  .navbar {
-    padding: 0.65rem 0;
-  }
-  .brand-logo-img {
-    height: 44px;
-  }
-  .hero-section {
-    padding: 3rem 0 4rem 0;
-  }
-  .hero-title {
-    font-size: 2.1rem;
-    line-height: 1.2;
-  }
-  .hero-desc {
-    font-size: 1rem;
-  }
-  .hero-cta-group {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .hero-cta-group .btn {
-    width: 100%;
-  }
-  .section {
-    padding: 3.5rem 0;
-  }
-  .section-title {
-    font-size: 1.8rem;
-  }
+/* Tablets & Mobile Navigation (max-width: 900px) */
+@media (max-width: 900px) {
   .nav-menu {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: #0b0f17;
+    background: rgba(11, 15, 23, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     flex-direction: column;
     padding: 1.5rem;
     gap: 1.1rem;
     border-bottom: 1px solid var(--border-dark);
     display: none;
-    box-shadow: 0 16px 32px rgba(0,0,0,0.8);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85);
+    z-index: 1001;
   }
   .nav-menu.open {
     display: flex;
+    animation: fadeInDown 0.25s ease forwards;
   }
   .mobile-toggle {
     display: block;
   }
-  .nav-actions {
-    gap: 0.35rem;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Standard Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0.2rem 0;
   }
-  .nav-actions .btn-quote-desktop {
-    display: none;
+  .navbar {
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+  }
+  .brand-logo-emblem {
+    height: 42px;
+  }
+  .brand-name-main {
+    font-size: 1.15rem;
+  }
+  .brand-name-sub {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+  }
+  .brand-tagline {
+    font-size: 0.48rem;
+  }
+  .nav-actions {
+    gap: 0.4rem;
   }
   .nav-actions .btn-call-nav,
   .nav-actions .btn-whatsapp-nav {
-    padding: 0.35rem 0.45rem;
-    font-size: 0.72rem;
-    gap: 0.25rem;
-  }
-  .nav-actions .btn-call-nav strong,
-  .nav-actions .btn-whatsapp-nav strong {
-    font-size: 0.72rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    gap: 0.3rem;
   }
   .nav-actions .btn-call-nav span,
   .nav-actions .btn-whatsapp-nav span {
     display: none;
   }
+  .nav-actions .btn-call-nav strong,
+  .nav-actions .btn-whatsapp-nav strong {
+    font-size: 0.75rem;
+  }
   .mobile-toggle {
-    padding: 0.35rem 0.45rem;
+    padding: 0.4rem 0.55rem;
+  }
+
+  /* Hero adjustments */
+  .hero-section {
+    padding: 2.75rem 0 3.75rem 0;
+  }
+  .hero-title {
+    font-size: 2.15rem;
+    line-height: 1.22;
+  }
+  .hero-desc {
+    font-size: 0.98rem;
+    margin-bottom: 1.5rem;
   }
   .hero-cta-group {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.65rem;
+    margin-bottom: 2rem;
   }
   .hero-cta-group .btn-call,
   .hero-cta-group .btn-whatsapp {
-    flex: 1 1 calc(50% - 0.4rem);
-    padding: 0.75rem 0.45rem;
-    font-size: 0.8rem;
+    flex: 1 1 calc(50% - 0.35rem);
+    padding: 0.78rem 0.5rem;
+    font-size: 0.84rem;
     gap: 0.35rem;
   }
   .hero-cta-group .btn-outline {
     flex: 1 1 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
   }
   .hero-trust-badges {
     grid-template-columns: 1fr;
-    gap: 0.85rem;
+    gap: 0.75rem;
+    padding-top: 1.25rem;
   }
-  .input-row {
-    grid-template-columns: 1fr;
+
+  /* Hero Badges on mobile */
+  .floating-cert-badge {
+    top: -10px;
+    right: 5px;
+    font-size: 0.72rem;
+    padding: 0.45rem 0.75rem;
   }
+  .floating-review-badge {
+    bottom: -12px;
+    left: 5px;
+    padding: 0.5rem 0.8rem;
+  }
+  .floating-review-badge .review-stars {
+    font-size: 0.85rem;
+  }
+
+  /* Section Spacing */
+  .section {
+    padding: 3.5rem 0;
+  }
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+  .section-title {
+    font-size: 1.85rem;
+  }
+  .section-description {
+    font-size: 0.95rem;
+  }
+
+  /* Filter Tabs with horizontal scroll */
+  .catalog-filters {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0.4rem 0.25rem 0.85rem 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-400) transparent;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+  .catalog-filters::-webkit-scrollbar {
+    height: 4px;
+  }
+  .catalog-filters::-webkit-scrollbar-thumb {
+    background: var(--primary-400);
+    border-radius: 4px;
+  }
+  .filter-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.82rem;
+    padding: 0.48rem 0.95rem;
+  }
+
+  /* Product grid */
   .product-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .product-body {
+    padding: 1.25rem;
   }
   .product-card-cta-group {
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
   }
+
+  /* Wholesale section */
   .wholesale-banner {
-    padding: 2.25rem 1.5rem;
+    padding: 2.25rem 1.35rem;
   }
   .wholesale-benefits-list {
     grid-template-columns: 1fr;
+    gap: 0.85rem;
   }
+
+  /* Contact section */
   .contact-info-card, .contact-form-card {
     padding: 1.75rem 1.25rem;
   }
   .contact-cta-bar {
     grid-template-columns: 1fr;
   }
-  .desktop-floating-actions {
-    display: none; /* Hide desktop pills, use sticky bar */
+  .input-row {
+    grid-template-columns: 1fr;
   }
-  .mobile-action-bar {
-    display: block;
-  }
-  body {
-    padding-bottom: 68px; /* Offset for sticky bar */
-  }
+
+  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  .brand-logo-emblem {
-    height: 38px;
+  .site-footer {
+    padding: 3.5rem 0 2rem 0;
   }
-  .brand-name-main {
-    font-size: 1.1rem;
+
+  /* Bottom-right floating actions on Mobile */
+  .corner-floating-widget {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    right: 14px;
+    gap: 10px;
   }
-  .brand-name-sub {
+  .corner-fab {
+    padding: 6px 12px 6px 6px;
+    gap: 8px;
+  }
+  .fab-icon-wrap {
+    width: 40px;
+    height: 40px;
+  }
+  .fab-icon-wrap svg {
+    width: 20px;
+    height: 20px;
+  }
+  .fab-tag {
     font-size: 0.65rem;
-    letter-spacing: 0.24em;
   }
-  .brand-tagline {
-    font-size: 0.48rem;
-  }
-  .floating-review-badge {
-    bottom: -10px;
-    left: -5px;
-    padding: 0.5rem 0.8rem;
+  .fab-text {
+    font-size: 0.84rem;
   }
 }
 
-@media (max-width: 380px) {
+/* Small Smartphone Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
   .hero-title {
     font-size: 1.85rem;
   }
@@ -1762,15 +1882,50 @@ button, input, select, textarea {
     font-size: 1.05rem;
   }
   .brand-name-sub {
-    font-size: 0.65rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
   }
   .brand-tagline {
     display: none;
   }
-  .nav-actions .btn-call-nav span {
+  .nav-actions .btn-call-nav,
+  .nav-actions .btn-whatsapp-nav {
+    padding: 0.35rem 0.45rem;
+  }
+  .nav-actions .btn-call-nav strong,
+  .nav-actions .btn-whatsapp-nav strong {
     display: none;
   }
-  .mobile-btn {
-    font-size: 0.66rem;
+  .hero-cta-group .btn-call,
+  .hero-cta-group .btn-whatsapp {
+    flex: 1 1 100%;
+  }
+  .product-card-cta-group {
+    grid-template-columns: 1fr;
+  }
+
+  /* Compact floating corner FABs on small phones */
+  .corner-floating-widget {
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    right: 10px;
+    gap: 8px;
+  }
+  .corner-fab {
+    padding: 5px 10px 5px 5px;
+    gap: 6px;
+  }
+  .fab-icon-wrap {
+    width: 36px;
+    height: 36px;
+  }
+  .fab-icon-wrap svg {
+    width: 18px;
+    height: 18px;
+  }
+  .fab-tag {
+    font-size: 0.6rem;
+  }
+  .fab-text {
+    font-size: 0.78rem;
   }
 }
