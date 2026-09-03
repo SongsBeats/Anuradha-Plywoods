@@ -1,82 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://anuradhaplywoods.com/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <loc>https://anuradha-plywoods.vercel.app/</loc>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://anuradhaplywoods.com/assets/images/watermark-marine-710-full.jpg</image:loc>
-      <image:title>Watermark Primeclass IS:710 Marine Grade Plywood Vijayawada</image:title>
-      <image:caption>Boiling Water Proof BWP Marine Plywood with 20 Years Warranty in Vijayawada</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://anuradhaplywoods.com/assets/images/orange-is303-gurjan-wood-25yr.jpg</image:loc>
-      <image:title>Orange Plywood and Boards IS 303:2024 Gurjan Wood</image:title>
-      <image:caption>100% Gurjan Wood Plywood with 25 Years Warranty wholesale Vijayawada</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://anuradhaplywoods.com/assets/images/flush-door-ornato-platinum.jpg</image:loc>
-      <image:title>Ornato Platinum 100% Pinewood Double Core Flush Door IS:2202</image:title>
-      <image:caption>Kiln seasoned Pinewood Flush Doors at wholesale rates in Sing Nager, Vijayawada</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://anuradhaplywoods.com/assets/images/sunshine-is710-marine-gurjan.jpg</image:loc>
-      <image:title>Sunshine Marine Plywood IS:710 Gurjan Face Veneer</image:title>
-      <image:caption>Full Core Full Panel Marine Grade Plywood in Vijayawada</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://anuradhaplywoods.com/assets/images/fabric-series-laminate-3270.jpg</image:loc>
-      <image:title>Fabric Series Decorative Laminates 3270 SF/MT</image:title>
-      <image:caption>High Pressure Decorative Interior Laminates</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://anuradhaplywoods.com/assets/images/hardwood-18mm-plywood-stack.jpg</image:loc>
-      <image:title>18mm Hardwood Commercial Plywood Sheets Inventory</image:title>
-      <image:caption>Bulk Plywood Sheets Wholesale Depot Sing Nager Vijayawada</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://anuradhaplywoods.com/#calculator</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://anuradhaplywoods.com/#products</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://anuradhaplywoods.com/#grades</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://anuradhaplywoods.com/#wholesale</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://anuradhaplywoods.com/#gallery</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://anuradhaplywoods.com/#faq</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://anuradhaplywoods.com/#contact</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 </urlset>

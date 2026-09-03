@@ -1,4 +1,4 @@
-# Anuradha Plywoods — Official Website
+# Anuradha Plywoods in Vijayawada — Official Website
 
 > **STRENGTH. QUALITY. TRUST.**  
 > Vijayawada's Premier Wholesale & Retail Plywood and Timber Depot.
@@ -12,10 +12,11 @@
 
 ## 🏢 Business Overview
 
-- **Business Name**: Anuradha Plywoods
-- **Address**: Ambapuram Road, Sing Nager, Vijayawada, Andhra Pradesh - 520003, India
+- **Business Name**: Anuradha Plywoods in Vijayawada
+- **Category**: Plywood supplier
+- **Address**: Ambapuram Road, Sing Nagar, Vijayawada, Andhra Pradesh - 520003, India
 - **Phone / WhatsApp**: [+91 8247893728](tel:+918247893728)
-- **Business Hours**: Open Daily 8:30 AM – 9:00 PM
+- **Business Hours**: Monday–Saturday, 9:00 AM–9:00 PM; Sunday closed
 
 ---
 

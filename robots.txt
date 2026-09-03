@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow:
 
-Sitemap: https://anuradhaplywoods.com/sitemap.xml
+Sitemap: https://anuradha-plywoods.vercel.app/sitemap.xml
